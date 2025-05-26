@@ -1,0 +1,73 @@
+{
+    "questions": [
+      {
+        "index": 1,
+        "question": "It is the fourth planet from the Sun. it is covered in iron oxide dust, giving it the nickname (the Red Planet), it is among the brightest objects in Earth's sky & it has two Moons Phobos and Deimos. Which planet is known as the Red Planet?",
+        "answers": [
+          {
+            "answer": "Venus",
+            "correct": false
+          },
+          {
+            "answer": "Saturn",
+            "correct": false
+          },
+          {
+            "answer": "Mars",
+            "correct": true,
+            "reason": "Mars is called the RED PLANET"
+          },
+          {
+            "answer": "Jupiter",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "question": "A 72-year-old woman presented with postmenopausal vaginal bleeding lasting 6 months. Endometrial biopsy showed FIGO grade 3 endometrioid adenocarcinoma of the endometrium. She underwent robotic-assisted total laparoscopic hysterectomy, bilateral salpingo-oophorectomy, and bilateral pelvic sentinel lymph node sampling for surgical staging. Final surgical pathology showed stage IB, grade 3 endometrioid adenocarcinoma of the endometrium with 70% depth of myometrial invasion and foci of lymphovascular space invasion (LVSI). Which of the following is the most important diagnostic test to determine escalation of adjuvant therapy?",
+        "answers": [
+          {
+            "answer": "PD-L1 immunohistochemical staining",
+            "correct": false
+          },
+          {
+            "answer": "Mismatch repair (MMR) immunohistochemistry",
+            "correct": false
+          },
+          {
+            "answer": "Next-generation sequencing for POLE mutation",
+            "correct": true,
+            "reason": "Molecular analysis of endometrial carcinoma has identified four clinically significant molecular subgroups associated with differing clinical prognoses: POLE mutations, high microsatellite instability (MSI-H) or mismatch repair deficiency (dMMR), no specific molecular profile (NSMP), and abnormal p53. Retrospective analyses indicate that these four molecular subgroups may respond to therapy differently and therefore may require escalation or de-escalation of therapy compared to previous guidelines. This patient presented with surgically staged IB, grade 3 high-intermediate-risk endometrial adenocarcinoma (age older than 70 years, deep myometrial invasion, and LVSI), which warranted postoperative adjuvant therapy according to the previous guidelines. However, if her tumor tests positive for POLE mutation, current literature and several society guidelines recommend de-escalating adjuvant therapy to close observation. PD-L1, dMMR, and EGFR mutation could offer further treatment options but not de-escalation of adjuvant therapy.\n\nReferences:\n• National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology. Uterine Neoplasms. Version 1.2024. https://www.nccn.org/\n• Murali R, Delair DF, Bean SM, Abu-Rustum NR, Soslow RA. Evolving roles of histologic evaluation and molecular/genomic profiling in the management of endometrial cancer. J Natl Compr Canc Netw. 2018;16(2):201-209. doi:10.6004/jnccn.2017.7066\n• Jamieson A, McAlpine JN. Molecular profiling of endometrial cancer from TCGA to clinical practice. J Natl Compr Canc Netw. 2023;21(2):210-216. doi:10.6004/jnccn.2022.7096"
+          },
+          {
+            "answer": "Next-generation sequencing for EGFR mutation",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "question": "A 72-year-old woman diagnosed 5 years ago with a history of stage IIIC ovarian cancer underwent optimal cytoreduction and adjuvant treatment with six cycles of carboplatin and paclitaxel. At the time of her diagnosis, she underwent genetic counseling and testing, and she was found to have a deleterious BRCA1 mutation. She has no residual adverse effects from her initial treatment. She had been doing well until 3 weeks ago when she developed mild abdominal pressure, bloating, and an occasional cough. She has had no fever, chills, sweating, or shortness of breath. Her primary care provider ordered a CT scan of the chest, abdomen, and pelvis, demonstrating moderate ascites within the abdomen, a moderate left pleural effusion, and three lesions in the liver (the largest measuring 4-cm) suspicious for malignancy. She has some thickening in the mesentery that is concerning for carcinomatosis and enlarged retroperitoneal and pelvic lymph nodes. Fine-needle aspiration of one of the liver lesions is notable for malignant cells consistent with serous carcinoma. Which of the following is the most appropriate next step?",
+        "answers": [
+          {
+            "answer": "Intravenous carboplatin combination therapy",
+            "correct": true,
+            "reason": "The patient has platinum-sensitive disease with more than 1-year interval from completion of prior platinum chemotherapy. While recent data suggest benefits with optimal cytoreduction in the setting of platinum-sensitive recurrent ovarian cancer, this patient has apparent metastatic disease, and it is unlikely that all disease could be resected. The data suggest that a suboptimal surgery results in worse outcomes than no surgery at all. The standard of care is to proceed with platinum doublet therapy. While this patient has a BRCA mutation, FDA approval of olaparib was withdrawn in August 2022 for fourth-line treatment of BRCA1/2-mutated recurrent disease and is no longer a treatment option. However, olaparib could be used as maintenance therapy after completion of chemotherapy if she responds well.\n\nReferences:\n• Pujade-Lauraine E, Ledermann JA, Selle F, et al. Olaparib tablets as maintenance therapy in patients with platinum-sensitive, relapsed ovarian cancer and a BRCA1/2 mutation (SOLO2/ENGOT-Ov21): a double-blind, randomised, placebo-controlled, phase 3 trial. Lancet Oncol. 2017;18(9):1274-1284. doi:10.1016/S1470-2045(17)30469-2\n• Bois AD, Sehouli J, Vergote I, et al. Randomized phase III study to evaluate the impact of secondary cytoreductive surgery in recurrent ovarian cancer: final analysis of AGO DESKTOP III/ENGOT-ov20. J Clin Oncol. 2020;38(15_suppl):6000. doi: 10.1200/JCO.2020.38.15_suppl.6000\n• Pujade-Lauraine E, Wagner U, Aavall-Lundqvist E, et al. Pegylated liposomal doxorubicin and carboplatin compared with paclitaxel and carboplatin for patients with platinum-sensitive ovarian cancer in late relapse. J Clin Oncol. 2010;28(20):3323-3329. doi:10.1200/JCO.2009.25.7519"
+          },
+          {
+            "answer": "Olaparib",
+            "correct": false
+          },
+          {
+            "answer": "Olaparib and bevacizumab",
+            "correct": false
+          },
+          {
+            "answer": "Surgical exploration with cytoreduction, followed by adjuvant intraperitoneal/intravenous chemotherapy",
+            "correct": false
+        }
+    ]
+  }
+]
+}

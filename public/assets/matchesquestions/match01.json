@@ -1,0 +1,70 @@
+{
+    "questions": [
+        {
+            "question": "What is the capital of France?",
+            "answers": [
+                {
+                    "answer": "Paris",
+                    "correct": true,
+                    "reason": "blablablas"
+                },
+                {
+                    "answer": "Cairo",
+                    "correct": false
+                },
+                {
+                    "answer": "London",
+                    "correct": false
+                },
+                {
+                    "answer": "Tokyo",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "Which planet is known as the Red Planet?",
+            "answers": [
+                {
+                    "answer": "Mars",
+                    "correct": true,
+                    "reason": "blablablas"
+                },
+                {
+                    "answer": "Venus",
+                    "correct": false
+                },
+                {
+                    "answer": "Jupiter",
+                    "correct": false
+                },
+                {
+                    "answer": "Saturn",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "Who wrote 'To Kill a Mockingbird'?",
+            "answers": [
+                {
+                    "answer": "Harper Lee",
+                    "correct": true,
+                    "reason": "blablablas"
+                },
+                {
+                    "answer": "Mark Twain",
+                    "correct": false
+                },
+                {
+                    "answer": "Ernest Hemingway",
+                    "correct": false
+                },
+                {
+                    "answer": "F. Scott Fitzgerald",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}
