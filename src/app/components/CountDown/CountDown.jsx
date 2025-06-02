@@ -33,9 +33,9 @@ const CountdownStopwatch = ({ isChanged, stopCounter }) => {
       {!stopCounter && (
         <>
           {isPause ? (
-            <PlayPauseBtn onClick={() => setPause(!isPause)} src={`${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/pause-button.png`} alt="PauseImg"/>
+            <PlayPauseBtn onClick={() => setPause(!isPause)} src={`${import.meta.env.VITE_APP_ASSETS_URL}/image/pause-button.png`} alt="PauseImg"/>
           ) : (
-            <PlayPauseBtn onClick={() => setPause(!isPause)} src={`${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/play-button.png`} alt="PlayImg"/>
+            <PlayPauseBtn onClick={() => setPause(!isPause)} src={`${import.meta.env.VITE_APP_ASSETS_URL}/image/play-button.png`} alt="PlayImg"/>
           )}
         </>
       )}

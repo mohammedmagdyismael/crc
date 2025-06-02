@@ -108,7 +108,7 @@ export const Title = styled.p`
     color: #1A4870;
 `;
 
-export const OncoLogo = styled.img`
+export const Logo = styled.img`
     width: 116px;
     margin: auto;
     display: flex;

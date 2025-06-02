@@ -7,7 +7,7 @@ import {
   MenuTitle,
   SideMenu,
   Tab,
-  OncoLogo,
+  Logo,
 } from './BurgerMenu.style';
 
 const BurgerMenu = ({ items, title, isLogged, handleLogout, handleLogin }) => {
@@ -21,9 +21,9 @@ const BurgerMenu = ({ items, title, isLogged, handleLogout, handleLogin }) => {
         <div />
       </BurgerIcon>
       
-      <OncoLogo onClick={() => {
+      <Logo onClick={() => {
           window.location.href = '/';
-        }} src={`${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/Oncolympics Logo.png`} alt='Oncolympics_Logo' />
+        }} src={`${import.meta.env.VITE_APP_ASSETS_URL}/image/logo.png`} alt='App_Logo' />
 
       <SideMenu isOpen={isOpen}>
             <MenuTitle>{title}</MenuTitle>

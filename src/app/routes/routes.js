@@ -5,16 +5,12 @@ export const getTabs = role => {
 
     const tabs = [
         {
-            label: 'Groups',
-            route: '/groups'
+            label: 'Knockouts',
+            route: '/knockouts'
         },
         {
             label: 'Schedule',
             route: '/schedule'
-        },
-        {
-            label: 'Knockouts',
-            route: '/knockouts'
         }
     ];
 

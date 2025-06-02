@@ -10,7 +10,7 @@ export const LayoutContainer = styled.div`
 
   height: 100vh;
   ${props => (!props.hidebackground && !props.isMatch) && `
-      background-image: linear-gradient(to right, #ffffffc7, transparent 125%), url(${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/landing.png);
+      background-image: linear-gradient(to right, #ffffffc7, transparent 125%), url(${import.meta.env.VITE_APP_ASSETS_URL}/image/landing.png);
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -19,7 +19,7 @@ export const LayoutContainer = styled.div`
       background-repeat: no-repeat;
   `}
   ${props => (!props.hidebackground && props.isMatch) && `
-      background-image: linear-gradient(to right, #ffffffc7, transparent 125%), url(${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/matchBG.png);
+      background-image: linear-gradient(to right, #ffffffc7, transparent 125%), url(${import.meta.env.VITE_APP_ASSETS_URL}/image/matchBG.png);
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -40,7 +40,7 @@ export const LayoutContainer = styled.div`
     flex-direction: column;
 
     ${props => (!props.hidebackground && !props.isMatch) && `
-      background-image: linear-gradient(to right, #ffffffc7, transparent 125%), url(${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/bg_device.png);
+      background-image: linear-gradient(to right, #ffffffc7, transparent 125%), url(${import.meta.env.VITE_APP_ASSETS_URL}/image/bg_device.png);
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -49,7 +49,7 @@ export const LayoutContainer = styled.div`
       background-repeat: no-repeat;
   `}
   ${props => (!props.hidebackground && props.isMatch) && `
-      background-image: linear-gradient(to right, #ffffffc7, transparent 125%), url(${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/bg_device.png);
+      background-image: linear-gradient(to right, #ffffffc7, transparent 125%), url(${import.meta.env.VITE_APP_ASSETS_URL}/image/bg_device.png);
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -232,7 +232,7 @@ export const UserName = styled.p`
   text-overflow: ellipsis;
 `;
 
-export const OncoLogo = styled.img`
+export const Logo = styled.img`
     width: 7vw;
     display: flex;
     cursor: pointer;

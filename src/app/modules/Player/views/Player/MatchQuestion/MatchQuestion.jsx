@@ -42,7 +42,7 @@ const MatchQuestion = ({ questionFile, currentQuestion, answerQuestion, match, m
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/matchesquestions/${questionFile}`);
+                const response = await fetch(`${import.meta.env.VITE_APP_ASSETS_URL}/matchesquestions/${questionFile}`);
                 const data = await response.json();
                 setQuestions(data.questions);
                 // setLoading(false);

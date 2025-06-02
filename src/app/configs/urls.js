@@ -1,4 +1,4 @@
-const baseURL = import.meta.env.VITE_APP_ONCO_API_URL;
+const baseURL = import.meta.env.VITE_APP_API_URL;
 
 export const urls = {
     login: `${baseURL}/users/login`,

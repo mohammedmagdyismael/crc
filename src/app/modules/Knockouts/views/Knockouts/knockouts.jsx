@@ -9,16 +9,16 @@ const Groups = ({ error, loading, matches }) => {
   return (
     <Layout>
       <Container>
-        <KnockOutsImg src={`${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/knockouts.png`} alt='knockouts' />
+        <KnockOutsImg src={`${import.meta.env.VITE_APP_ASSETS_URL}/image/knockouts.png`} alt='knockouts' />
         <div style={{ height: '50px' }}/>
         <Matches
-            sectionTitle="Quarter-Finals"
+            sectionTitle="Knockouts"
             matchDetailsAPI={matchDetailsAPI}
-            matches={matches && matches[STAGES.Second_round]}
+            matches={matches && matches[STAGES.First_round]}
             error={error}
             loading={loading}
         />
-        <Matches
+        {/* <Matches
             sectionTitle="Semi-Finals"
             matchDetailsAPI={matchDetailsAPI}
             matches={matches && matches[STAGES.Third_round]}
@@ -31,7 +31,7 @@ const Groups = ({ error, loading, matches }) => {
             matches={matches && matches[STAGES.Final_round]}
             error={error}
             loading={loading}
-        />
+        /> */}
       </Container>
     </Layout>
   );

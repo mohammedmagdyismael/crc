@@ -38,10 +38,10 @@ const MatchDetails = ({ match, penaltyTeam, rewardTeam, isAdmin }) => {
 
     const team1Name = match?.match_status === 1 ? (match.team1_abbrev || match.team1_name) : match.team1_name;
     const team1Score = match?.score_team1;
-    const team1Logo = `${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/teamslogos/${match.team1_logo}`;
+    const team1Logo = `${import.meta.env.VITE_APP_ASSETS_URL}/teamslogos/${match.team1_logo}`;
     const team2Name = match?.match_status === 1 ? (match.team2_abbrev || match.team2_name) : match.team2_name;
     const team2Score = match?.score_team2;
-    const team2Logo = `${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/teamslogos/${match.team2_logo}`;
+    const team2Logo = `${import.meta.env.VITE_APP_ASSETS_URL}/teamslogos/${match.team2_logo}`;
 
     const showOldScoreBoard = match.match_status === 0 || match.match_status === 2;
 
@@ -117,9 +117,9 @@ const MatchDetails = ({ match, penaltyTeam, rewardTeam, isAdmin }) => {
         return (
             <ScoreBoardContainer notStarted={match.match_status === 0 || match.match_status === 2}>
                 {showRewardBtns ? (
-                    <ScoreBoardTemp src={`${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/SCOREBOARD.png`} alt='score-board' />
+                    <ScoreBoardTemp src={`${import.meta.env.VITE_APP_ASSETS_URL}/image/SCOREBOARD.png`} alt='score-board' />
                 ) : (
-                    <ScoreBoardTemp src={`${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/SCOREBOARD2.png`} alt='score-board' />
+                    <ScoreBoardTemp src={`${import.meta.env.VITE_APP_ASSETS_URL}/image/SCOREBOARD2.png`} alt='score-board' />
                 )}
 
                 {/** Team 1 Logo */}

@@ -8,7 +8,7 @@ import { AuthPathes } from 'app/configs/Auth';
 import { 
   LoginContainer, 
   ChildrenContainer,
-  OncoLogo,
+  Logo,
   LogoutContainer,
   LayoutContainer,
   Tab,
@@ -63,12 +63,12 @@ const Layout = ({ children, hidebackground, extendChildContainer, isMatch }) => 
     <LayoutContainer hidebackground={hidebackground} isMatch={isMatch}>
       <BurgerMenu items={tabs} title={`Hi! ${userInfo?.name || ''}`} isLogged={!!role} handleLogin={handleLogin} handleLogout={handleLogout} />
       <TabContainer>
-        <OncoLogo
+        <Logo
           isMatch={isMatch}
           onClick={() => {
             window.location.href = '/';
           }}
-          src={`${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/image/Oncolympics Logo.png`} alt='Oncolympics_Logo'
+          src={`${import.meta.env.VITE_APP_ASSETS_URL}/image/logo.png`} alt='logo'
         />
         
         <ButtonsContainer isMatch={isMatch}>
@@ -88,7 +88,7 @@ const Layout = ({ children, hidebackground, extendChildContainer, isMatch }) => 
               {userInfo ? (
                 <UserInfoInnerContainr>
                   <UserName>{`Hi! ${userInfo?.name}`}</UserName>
-                  {!!userInfo.logo && (<UserLogo src={`${import.meta.env.VITE_APP_ONCO_ASSETS_URL}/teamslogos/${userInfo?.logo}`} alt='user_logo' />)}
+                  {!!userInfo.logo && (<UserLogo src={`${import.meta.env.VITE_APP_ASSETS_URL}/teamslogos/${userInfo?.logo}`} alt='user_logo' />)}
                 </UserInfoInnerContainr>
               ): (
                 <UserInfoInnerContainr>

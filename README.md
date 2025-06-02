@@ -6,11 +6,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Frontend Repo
 
-https://github.com/mohammedmagdyismael/oncolympics
+https://github.com/mohammedmagdyismael/crc
 
 ## Backend Repo
 
-https://github.com/mohammedmagdyismael/oncolympics_api
+https://github.com/mohammedmagdyismael/crc_api
 
 ## Available Scripts
 

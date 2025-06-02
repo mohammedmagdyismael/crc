@@ -1,1 +1,1 @@
-export const redirectionPathAfterLogin = '/groups';
+export const redirectionPathAfterLogin = '/knockouts';
