@@ -38,15 +38,25 @@ const MatchScores = () => {
     return (
         <div>
             <LabelContainer><Label>Match Scores</Label></LabelContainer>
-            {scores.scores.map((score, index) => (
+            {scores.scores.map((score, index) => {
+
+                let label = '';
+                if (score.questionId + 1 > import.meta.env.VITE_APP_NUMBER_MAIN_QUESTIONS) {
+                    label = `Extra Question ${score.questionId + 1 - import.meta.env.VITE_APP_NUMBER_MAIN_QUESTIONS}`;
+                } else {
+                    label = `Question ${score.questionId + 1}`;
+                }
+
+
+                return (
                 <QContainer key={index}>
-                    <Qlabel>Question {score.questionId + 1}</Qlabel>
+                    <Qlabel>{label}</Qlabel>
                     <ScoreContainer>
                         <TeamScoreContainer><TeamLabel>{score.team1_name}:</TeamLabel> <ScoreLabel>{score.score_team1}</ScoreLabel></TeamScoreContainer>
                         <TeamScoreContainer><ScoreLabel>{score.score_team2}</ScoreLabel> <TeamLabel>:{score.team2_name}</TeamLabel></TeamScoreContainer>
                     </ScoreContainer>
                 </QContainer>
-            ))}
+            )})}
         </div>
     );
 };

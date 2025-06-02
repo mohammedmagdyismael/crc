@@ -52,13 +52,21 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
 
     const question = questions[currentQuestion];
 
+    const goalNumberOfQuestions = Number(import.meta.env.VITE_APP_NUMBER_MAIN_QUESTIONS);
+    let label = '';
+    if (currentQuestion + 1 > goalNumberOfQuestions) {
+        label = `Extra Question ${(currentQuestion + 1) - goalNumberOfQuestions} / ${import.meta.env.VITE_APP_NUMBER_EXTRA_QUESTIONS}`;
+    } else {
+        label = `${currentQuestion + 1} / ${goalNumberOfQuestions}`
+    }
+
     return (
         <Container>
             <TeamQuestionContainer>
                 <div style={{ width: '100%' }}>
                     <div style={{ display: 'flex' }}>
 
-                        <QuestionsCounter>{`${currentQuestion + 1} / ${questions?.length}`}</QuestionsCounter>
+                        <QuestionsCounter>{`${label}`}</QuestionsCounter>
                         <div style={{ margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
                             <div style={{     width: '145px' }}>
                                 <CountdownStopwatch isChanged={currentQuestion} stopCounter={stopCounter} />

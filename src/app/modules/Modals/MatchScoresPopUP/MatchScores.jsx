@@ -64,15 +64,24 @@ const MatchScores = ({ isOpen, onClose, match, matchDetailsAPI }) => {
                     </MatchScoreBoardContainer>
                     
                     <ScoresContainer>
-                        {scores?.map((score, index) => (
+                        {scores?.map((score, index) => {
+
+                            let label = '';
+                            if (score.questionId + 1 > import.meta.env.VITE_APP_NUMBER_MAIN_QUESTIONS) {
+                                label = `Extra Question ${score.questionId + 1 - import.meta.env.VITE_APP_NUMBER_MAIN_QUESTIONS}`;
+                            } else {
+                                label = `Question ${score.questionId + 1}`;
+                            }
+
+                            return (
                             <QContainer key={index}>
-                                <Qlabel>Question {score.questionId + 1}</Qlabel>
+                                <Qlabel>{label}</Qlabel>
                                 <ScoreContainer>
                                     <TeamScoreContainer><TeamLabel>{score.team1_abbrev}:</TeamLabel> <ScoreLabel>{score.score_team1}</ScoreLabel></TeamScoreContainer>
                                     <TeamScoreContainer><ScoreLabel>{score.score_team2}</ScoreLabel> <TeamLabel>:{score.team2_abbrev}</TeamLabel></TeamScoreContainer>
                                 </ScoreContainer>
                             </QContainer>
-                        ))}
+                        )})}
                     </ScoresContainer>
                 </InnerContainer>
                 

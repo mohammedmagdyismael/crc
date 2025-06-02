@@ -131,6 +131,8 @@ const MatchModeratorView = () => {
 
     const teamCanAnswer = match?.canAnswer === 1
 
+    console.log(match)
+
     if (match?.match_status === 0) {
         return (
           <Layout isMatch>
