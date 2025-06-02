@@ -7,10 +7,6 @@ export const getTabs = role => {
         {
             label: 'Knockouts',
             route: '/knockouts'
-        },
-        {
-            label: 'Schedule',
-            route: '/schedule'
         }
     ];
 
