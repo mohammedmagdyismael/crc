@@ -24,8 +24,14 @@ const Layout = ({ children, hidebackground, extendChildContainer, isMatch }) => 
   const [userInfo, setUserInfo] = useState(null);
   const role = Cookies.get('role');
 
+  // Redirect to /login if not logged in and on an auth path
   if (!role && AuthPathes.includes(String(window.location.pathname.split('/')[1]).toLowerCase())) {
     window.location.href = '/login';
+  }
+
+  // Redirect to /knockouts if logged in and on /login
+  if (role && window.location.pathname === '/login') {
+    window.location.href = '/knockouts';
   }
 
   useEffect(() => {
