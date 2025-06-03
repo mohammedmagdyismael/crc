@@ -30,7 +30,6 @@ const MatchModeratorView = () => {
     const [matchData, setMatchData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [numberOfQuestions, setNumberOfQuestions] = useState(0);
     const [isRestting, setRestting] = useState(undefined);
     const [isProceeding, setProceeding] = useState(undefined);
 
@@ -131,7 +130,10 @@ const MatchModeratorView = () => {
 
     const teamCanAnswer = match?.canAnswer === 1
 
-    console.log(match)
+    const enableEndBtn = 
+        (Number(import.meta.env.VITE_APP_NUMBER_MAIN_QUESTIONS) === match?.current_question + 1 && match?.score_team1 !== match?.score_team2) || 
+        ((Number(import.meta.env.VITE_APP_NUMBER_MAIN_QUESTIONS) + Number(import.meta.env.VITE_APP_NUMBER_EXTRA_QUESTIONS)) === match?.current_question + 1);
+
 
     if (match?.match_status === 0) {
         return (
@@ -153,14 +155,13 @@ const MatchModeratorView = () => {
                         toggleDetailsPopUp={toggleDetailsPopUp}
                         teamCanAnswer={teamCanAnswer}
                         stopAnswer={stopAnswer}
-                        setNumberOfQuestions={setNumberOfQuestions}
                         questionFile={match?.question_file}
                         currentQuestion={match?.current_question}
                         matchDetails={<MatchDetails isAdmin match={match} rewardTeam={rewardTeam} penaltyTeam={penaltyTeam}  />}
                     />
                   
                   <BtnsPanel id='panel'>
-                    {numberOfQuestions === match?.current_question + 1 ? (
+                    {enableEndBtn ? (
                         <div>
                             {!teamCanAnswer && (
                                 <ActionBtn onClick={endMatch}><ActionBtnLabel>End Match</ActionBtnLabel></ActionBtn>
