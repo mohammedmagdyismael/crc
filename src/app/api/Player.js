@@ -17,11 +17,12 @@ export const playerMatchDetails = async () => {
     }
 };
 
-export const answerAPI = async (answer, answerId) => {
+export const answerAPI = async (answer, answerId, isExtraQuestion) => {
     try {
         await axios.post(urls.answer, {
             answer,
             answerId,
+            isExtraQuestion,
         },{
             headers: {
                 'token': Cookies.get('token'),

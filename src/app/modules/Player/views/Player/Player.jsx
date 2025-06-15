@@ -16,8 +16,8 @@ const PlayerView = () => {
     const [error, setError] = useState(null);
 
 
-    const answerQuestion = async (answer, index) => {
-        await answerAPI(answer, index)
+    const answerQuestion = async (answer, index, isExtraQuestion) => {
+        await answerAPI(answer, index, isExtraQuestion);
     }
 
     const prematchData  = useDeferredValue(matchData);

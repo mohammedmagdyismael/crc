@@ -68,7 +68,9 @@ const MatchQuestion = ({ questionFile, currentQuestion, answerQuestion, match, m
     }
 
     const submitAnswer = () => {
-        answerQuestion(selectedAnswer, selectedOption);
+        const goalNumberOfQuestions = Number(import.meta.env.VITE_APP_NUMBER_MAIN_QUESTIONS);
+        const isExtraQuestion = currentQuestion + 1 > goalNumberOfQuestions;
+        answerQuestion(selectedAnswer, selectedOption, isExtraQuestion);
     }
 
 
