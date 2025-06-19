@@ -23,7 +23,7 @@ const KnockoutsContainer = () => {
     
         if(!(matches && matches?.length))fetchMatches();
     
-        const interval = setInterval(fetchMatches, 15000);
+        const interval = setInterval(fetchMatches, 500);
     
         return () => clearInterval(interval);
       }, []);

@@ -40,7 +40,7 @@ const PlayerView = () => {
         };
 
         if(!matchData) fetchMatchData();
-        const interval = setInterval(fetchMatchData, 4000);
+        const interval = setInterval(fetchMatchData, 500);
 
         return () => clearInterval(interval);
     }, [matchData]);

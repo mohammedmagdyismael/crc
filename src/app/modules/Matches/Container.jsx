@@ -27,7 +27,7 @@ const MatchesContainer = () => {
     
         if(!(matches && matches?.length))fetchMatches();
     
-        const interval = setInterval(fetchMatches, 4000);
+        const interval = setInterval(fetchMatches, 5000);
     
         return () => clearInterval(interval);
       }, []);
