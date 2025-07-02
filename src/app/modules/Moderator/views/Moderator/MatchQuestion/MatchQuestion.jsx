@@ -15,8 +15,10 @@ import {
     TeamQuestionContainer,
     TeamsDetailsContainer,
     Stopwatch,
+    GalleryBtn,
 } from './MatchQuestion.style';
 import CountdownStopwatch from 'app/components/CountDown/CountDown';
+import QuestionAssetsPopup from './QuestionAssetsPopup';
 
 
 const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDetails, questionFile, currentQuestion }) => {
@@ -25,6 +27,10 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
     const [error, setError] = useState(null);
     const [showRightAns, toggleRightAns] = useState(false);
     const [stopCounter, setStopCounter] = useState(false);
+    const [showAssetsPopup, setShowAssetsPopup] = useState(false);
+    const [currentAssetIndex, setCurrentAssetIndex] = useState(0);
+    const [showGuidelinesPopup, setShowGuidelinesPopup] = useState(false);
+    const [guidelinesImg, setGuidelinesImg] = useState(null);
 
     useEffect(() => {
         toggleRightAns(false);
@@ -37,6 +43,7 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
                 const response = await fetch(`${import.meta.env.VITE_APP_ASSETS_URL}/matchesquestions/${questionFile}`);
                 const data = await response.json();
                 setQuestions(data.questions);
+                setGuidelinesImg(data.guidelines); // <-- set guidelines image
                 setLoading(false);
             } catch (err) {
                 setError(err);
@@ -50,6 +57,7 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
     if (error) return <div>Error: {error.message}</div>;
 
     const question = questions[currentQuestion];
+    const { questionsassets } = question || {};
 
     const goalNumberOfQuestions = Number(import.meta.env.VITE_APP_NUMBER_MAIN_QUESTIONS);
     let label = '';
@@ -61,19 +69,55 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
 
     return (
         <Container>
+            <QuestionAssetsPopup
+                open={showAssetsPopup}
+                assets={questionsassets}
+                currentIndex={currentAssetIndex}
+                onClose={() => setShowAssetsPopup(false)}
+                onPrev={() => setCurrentAssetIndex(i => Math.max(i - 1, 0))}
+                onNext={() => setCurrentAssetIndex(i => Math.min(i + 1, questionsassets.length - 1))}
+            />
+            <QuestionAssetsPopup
+                open={showGuidelinesPopup}
+                assets={guidelinesImg ? [guidelinesImg] : []}
+                currentIndex={0}
+                onClose={() => setShowGuidelinesPopup(false)}
+                onPrev={() => {}}
+                onNext={() => {}}
+            />
             <TeamQuestionContainer>
                 <div style={{ width: '100%' }}>
                     <div style={{ display: 'flex' }}>
 
                         <QuestionsCounter>{`${label}`}</QuestionsCounter>
                         <div style={{ margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
-                            <div style={{     width: '145px' }}>
+                            <div style={{ width: '145px' }}>
                                 <CountdownStopwatch isChanged={currentQuestion} stopCounter={stopCounter} />
                             </div>
                             {teamCanAnswer && (
                                 <Stopwatch onClick={() => {stopAnswer(); setStopCounter(true);}} src={`${import.meta.env.VITE_APP_ASSETS_URL}/image/stopwatch.png`} alt='stopwatch' />
                             )}
                         </div>
+                        {/* Gallery Btn */}
+                        {questionsassets && questionsassets.length > 0 && (
+                            <GalleryBtn
+                                onClick={() => {
+                                    setCurrentAssetIndex(0);
+                                    setShowAssetsPopup(true);
+                                }}
+                            >
+                                Gallery
+                            </GalleryBtn>
+                        )}
+                        {/* Guidelines Btn */}
+                        {guidelinesImg && (
+                            <GalleryBtn
+                                style={{ marginLeft: 8 }}
+                                onClick={() => setShowGuidelinesPopup(true)}
+                            >
+                                GuideLines
+                            </GalleryBtn>
+                        )}
                     </div>
                     
                     <QuestionContainer><Question>{question?.question}</Question></QuestionContainer>

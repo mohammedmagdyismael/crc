@@ -122,3 +122,16 @@ export const Stopwatch = styled.img`
     cursor: pointer;
     margin: 0px 30px;
 `;
+
+export const GalleryBtn = styled.button`
+padding: 8px 20px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(252, 92, 125, 0.12);
+    transition: background 0.2s;
+`;
