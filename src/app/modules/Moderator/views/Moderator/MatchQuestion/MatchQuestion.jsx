@@ -30,7 +30,6 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
     const [showAssetsPopup, setShowAssetsPopup] = useState(false);
     const [currentAssetIndex, setCurrentAssetIndex] = useState(0);
     const [showGuidelinesPopup, setShowGuidelinesPopup] = useState(false);
-    const [guidelinesImg, setGuidelinesImg] = useState(null);
 
     useEffect(() => {
         toggleRightAns(false);
@@ -43,7 +42,6 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
                 const response = await fetch(`${import.meta.env.VITE_APP_ASSETS_URL}/matchesquestions/${questionFile}`);
                 const data = await response.json();
                 setQuestions(data.questions);
-                setGuidelinesImg(data.guidelines); // <-- set guidelines image
                 setLoading(false);
             } catch (err) {
                 setError(err);
@@ -57,7 +55,7 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
     if (error) return <div>Error: {error.message}</div>;
 
     const question = questions[currentQuestion];
-    const { questionsassets } = question || {};
+    const { questionsassets, guidelines } = question || {};
 
     const goalNumberOfQuestions = Number(import.meta.env.VITE_APP_NUMBER_MAIN_QUESTIONS);
     let label = '';
@@ -79,7 +77,7 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
             />
             <QuestionAssetsPopup
                 open={showGuidelinesPopup}
-                assets={guidelinesImg ? [guidelinesImg] : []}
+                assets={guidelines}
                 currentIndex={0}
                 onClose={() => setShowGuidelinesPopup(false)}
                 onPrev={() => {}}
@@ -110,7 +108,7 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
                             </GalleryBtn>
                         )}
                         {/* Guidelines Btn */}
-                        {guidelinesImg && (
+                        {guidelines.length > 0 && (
                             <GalleryBtn
                                 style={{ marginLeft: 8 }}
                                 onClick={() => setShowGuidelinesPopup(true)}
