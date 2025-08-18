@@ -104,7 +104,7 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
                                     setShowAssetsPopup(true);
                                 }}
                             >
-                                Gallery
+                                Media
                             </GalleryBtn>
                         )}
                         {/* Guidelines Btn */}
@@ -113,7 +113,7 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
                                 style={{ marginLeft: 8 }}
                                 onClick={() => setShowGuidelinesPopup(true)}
                             >
-                                GuideLines
+                                Rationale
                             </GalleryBtn>
                         )}
                     </div>
