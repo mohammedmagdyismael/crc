@@ -29,6 +29,7 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
     const [stopCounter, setStopCounter] = useState(false);
     const [showAssetsPopup, setShowAssetsPopup] = useState(false);
     const [currentAssetIndex, setCurrentAssetIndex] = useState(0);
+    const [currentGuidelinesIndex, setCurrentGuidelinesIndex] = useState(0);
     const [showGuidelinesPopup, setShowGuidelinesPopup] = useState(false);
 
     useEffect(() => {
@@ -78,10 +79,10 @@ const MatchQuestion = ({ toggleDetailsPopUp, teamCanAnswer, stopAnswer, matchDet
             <QuestionAssetsPopup
                 open={showGuidelinesPopup}
                 assets={guidelines}
-                currentIndex={0}
+                currentIndex={currentGuidelinesIndex}
                 onClose={() => setShowGuidelinesPopup(false)}
-                onPrev={() => {}}
-                onNext={() => {}}
+                onPrev={() => setCurrentGuidelinesIndex(i => Math.max(i - 1, 0))}
+                onNext={() => setCurrentGuidelinesIndex(i => Math.min(i + 1, guidelines.length - 1))}
             />
             <TeamQuestionContainer>
                 <div style={{ width: '100%' }}>
