@@ -3,14 +3,20 @@ import { matchDetailsAPI } from 'app/api/Knockouts';
 import Layout from 'app/components/Layout/Layout';
 import Matches from 'app/modules/common/Matches';
 import { STAGES } from 'app/constants/Stages';
-import { Container, KnockOutsImg } from './knockouts.style';
+import { Container, KnockOutsImg, RefreshBar, RefreshButton } from './knockouts.style';
  
-const Groups = ({ error, loading, matches }) => {
+const Groups = ({ error, loading, matches, onRefresh = () => {} }) => {
   return (
     <Layout>
       <Container>
         <KnockOutsImg src={`${import.meta.env.VITE_APP_ASSETS_URL}/image/knockouts.png`} alt='knockouts' />
         <div style={{ height: '50px' }}/>
+        <RefreshBar>
+          <RefreshButton onClick={onRefresh} title="Refresh matches">
+            <span className="icon">↻</span>
+            <span>Refresh</span>
+          </RefreshButton>
+        </RefreshBar>
         <Matches
             sectionTitle="Knockouts"
             matchDetailsAPI={matchDetailsAPI}

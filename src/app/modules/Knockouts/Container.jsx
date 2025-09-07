@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { allMatchesAPI } from 'app/api/Knockouts';
 import Knockouts from './views/Knockouts';
 
@@ -7,29 +7,24 @@ const KnockoutsContainer = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        // Fetch matches data from API
-        const fetchMatches = async () => {
-          try {
+    const fetchMatches = useCallback(async () => {
+        try {
+            setLoading(true);
             const formattedMatchesResponse = await allMatchesAPI();
             setMatches(formattedMatchesResponse);
             setLoading(false);
-          } catch (error) {
+        } catch (error) {
             console.log(error);
             setError('Failed to fetch data');
             setLoading(false);
-          }
-        };
-    
-        if(!(matches && matches?.length))fetchMatches();
-    
-        const interval = setInterval(fetchMatches, 500);
-    
-        return () => clearInterval(interval);
-      }, []);
+        }
+    }, []);
 
+    useEffect(() => {
+        fetchMatches();
+      }, [fetchMatches]);
 
-    return <Knockouts matches={matches} error={error} loading={loading} />
+    return <Knockouts matches={matches} error={error} loading={loading} onRefresh={fetchMatches} />
 };
 
 export default KnockoutsContainer;
